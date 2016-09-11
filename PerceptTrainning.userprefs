@@ -1,0 +1,13 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../../HuwProjects/WallComing/WallComing/Assets/WallMovement.cs">
+    <Files>
+      <File FileName="../../../../../HuwProjects/WallComing/WallComing/Assets/WallMovement.cs" Line="6" Column="43" />
+      <File FileName="../../../../../HuwProjects/WallComing/WallComing/Assets/WallGenerator.cs" Line="24" Column="15" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

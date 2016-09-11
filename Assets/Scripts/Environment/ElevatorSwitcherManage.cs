@@ -1,0 +1,44 @@
+﻿using UnityEngine;
+using System.Collections;
+
+/* Manage the switcher button of the elevator. Player trigger the elevator by touch this button. */
+public class ElevatorSwitcherManage : MonoBehaviour {
+	
+	public GameObject elevator;
+	public bool isupBtn;
+	public AudioClip Deing;
+
+	private ElevatorManage elevatorManage;
+	
+	// Use this for initialization
+	void Start () {
+		elevatorManage = elevator.GetComponent<ElevatorManage>();
+	}
+
+	void OnTriggerEnter(Collider other){
+		this.GetComponent<AudioSource>().PlayOneShot(Deing);
+		if(other.gameObject.tag == "Player"){
+			if(isupBtn){
+				elevatorManage.toUp = false;
+				if(elevatorManage.isUp){
+					elevatorManage.OpenFrontDoor();
+					elevatorManage.toDown = true;
+				}else{
+					elevatorManage.ElevatorUp();
+					elevatorManage.OpenFrontDoor();
+					elevatorManage.toDown = true;
+				}
+			}else{
+				elevatorManage.toDown = false;
+				if(!elevatorManage.isUp){
+					elevatorManage.OpenBackDoor();
+					elevatorManage.toUp = true;
+				}else{
+					elevatorManage.ElevatorDown();
+					elevatorManage.OpenBackDoor();
+					elevatorManage.toUp = true;
+				}
+			}
+		}
+	}
+}

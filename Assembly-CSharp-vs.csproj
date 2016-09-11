@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{4624B917-DA2F-EBB4-3EDA-265D2DC0E4EE}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_5_0_2;UNITY_5_0;UNITY_5;ENABLE_LICENSE_RENAME;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_NEW_HIERARCHY;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_NONPRO;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;UNITY_STANDALONE_OSX;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_MONO;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE;NET35;CROSS_PLATFORM_INPUT</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipItems.cs" />
+     <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipRandomItem.cs" />
+     <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\UICursor.cs" />
+     <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\UIEquipmentSlot.cs" />
+     <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\UIItemSlot.cs" />
+     <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\UIItemStorage.cs" />
+     <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\UIStorageSlot.cs" />
+     <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\System\InvAttachmentPoint.cs" />
+     <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\System\InvBaseItem.cs" />
+     <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\System\InvDatabase.cs" />
+     <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\System\InvEquipment.cs" />
+     <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\System\InvGameItem.cs" />
+     <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\System\InvStat.cs" />
+     <Compile Include="Assets\NGUI\Examples\Scripts\Other\ChatInput.cs" />
+     <Compile Include="Assets\NGUI\Examples\Scripts\Other\DownloadTexture.cs" />
+     <Compile Include="Assets\NGUI\Examples\Scripts\Other\EnvelopContent.cs" />
+     <Compile Include="Assets\NGUI\Examples\Scripts\Other\ExampleDragDropItem.cs" />
+     <Compile Include="Assets\NGUI\Examples\Scripts\Other\ExampleDragDropSurface.cs" />
+     <Compile Include="Assets\NGUI\Examples\Scripts\Other\LagPosition.cs" />
+     <Compile Include="Assets\NGUI\Examples\Scripts\Other\LagRotation.cs" />
+     <Compile Include="Assets\NGUI\Examples\Scripts\Other\LoadLevelOnClick.cs" />
+     <Compile Include="Assets\NGUI\Examples\Scripts\Other\LookAtTarget.cs" />
+     <Compile Include="Assets\NGUI\Examples\Scripts\Other\OpenURLOnClick.cs" />
+     <Compile Include="Assets\NGUI\Examples\Scripts\Other\PanWithMouse.cs" />
+     <Compile Include="Assets\NGUI\Examples\Scripts\Other\PlayIdleAnimations.cs" />
+     <Compile Include="Assets\NGUI\Examples\Scripts\Other\SetColorPickerColor.cs" />
+     <Compile Include="Assets\NGUI\Examples\Scripts\Other\Spin.cs" />
+     <Compile Include="Assets\NGUI\Examples\Scripts\Other\SpinWithMouse.cs" />
+     <Compile Include="Assets\NGUI\Examples\Scripts\Other\Tutorial5.cs" />
+     <Compile Include="Assets\NGUI\Examples\Scripts\Other\UISliderColors.cs" />
+     <Compile Include="Assets\NGUI\Examples\Scripts\Other\WindowAutoYaw.cs" />
+     <Compile Include="Assets\NGUI\Examples\Scripts\Other\WindowDragTilt.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\LanguageSelection.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\TypewriterEffect.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UIButton.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UIButtonActivate.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UIButtonColor.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UIButtonKeys.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UIButtonMessage.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UIButtonOffset.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UIButtonRotation.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UIButtonScale.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UICenterOnChild.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UICenterOnClick.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UIDragCamera.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UIDragDropContainer.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UIDragDropItem.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UIDragDropRoot.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UIDragObject.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UIDragResize.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UIDragScrollView.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UIDraggableCamera.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UIEventTrigger.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UIForwardEvents.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UIGrid.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UIImageButton.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UIKeyBinding.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UIKeyNavigation.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UIPlayAnimation.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UIPlaySound.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UIPlayTween.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UIPopupList.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UIProgressBar.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UISavedOption.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UIScrollBar.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UIScrollView.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UIShowControlScheme.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UISlider.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UISoundVolume.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UITable.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UIToggle.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UIToggledComponents.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UIToggledObjects.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UIWidgetContainer.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Interaction\UIWrapContent.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Internal\ActiveAnimation.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Internal\AnimationOrTween.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Internal\BMFont.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Internal\BMGlyph.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Internal\BMSymbol.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Internal\BetterList.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Internal\ByteReader.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Internal\EventDelegate.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Internal\Localization.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Internal\NGUIDebug.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Internal\NGUIMath.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Internal\NGUIText.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Internal\NGUITools.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Internal\PropertyBinding.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Internal\PropertyReference.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Internal\RealTime.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Internal\SpringPanel.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Internal\UIBasicSprite.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Internal\UIDrawCall.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Internal\UIEventListener.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Internal\UIGeometry.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Internal\UIRect.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Internal\UISnapshotPoint.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Internal\UIWidget.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Tweening\AnimatedAlpha.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Tweening\AnimatedColor.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Tweening\AnimatedWidget.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Tweening\SpringPosition.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Tweening\TweenAlpha.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Tweening\TweenColor.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Tweening\TweenFOV.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Tweening\TweenHeight.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Tweening\TweenOrthoSize.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Tweening\TweenPosition.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Tweening\TweenRotation.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Tweening\TweenScale.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Tweening\TweenTransform.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Tweening\TweenVolume.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Tweening\TweenWidth.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Tweening\UITweener.cs" />
+     <Compile Include="Assets\NGUI\Scripts\UI\UI2DSprite.cs" />
+     <Compile Include="Assets\NGUI\Scripts\UI\UI2DSpriteAnimation.cs" />
+     <Compile Include="Assets\NGUI\Scripts\UI\UIAnchor.cs" />
+     <Compile Include="Assets\NGUI\Scripts\UI\UIAtlas.cs" />
+     <Compile Include="Assets\NGUI\Scripts\UI\UICamera.cs" />
+     <Compile Include="Assets\NGUI\Scripts\UI\UIColorPicker.cs" />
+     <Compile Include="Assets\NGUI\Scripts\UI\UIFont.cs" />
+     <Compile Include="Assets\NGUI\Scripts\UI\UIInput.cs" />
+     <Compile Include="Assets\NGUI\Scripts\UI\UIInputOnGUI.cs" />
+     <Compile Include="Assets\NGUI\Scripts\UI\UILabel.cs" />
+     <Compile Include="Assets\NGUI\Scripts\UI\UILocalize.cs" />
+     <Compile Include="Assets\NGUI\Scripts\UI\UIOrthoCamera.cs" />
+     <Compile Include="Assets\NGUI\Scripts\UI\UIPanel.cs" />
+     <Compile Include="Assets\NGUI\Scripts\UI\UIRoot.cs" />
+     <Compile Include="Assets\NGUI\Scripts\UI\UISprite.cs" />
+     <Compile Include="Assets\NGUI\Scripts\UI\UISpriteAnimation.cs" />
+     <Compile Include="Assets\NGUI\Scripts\UI\UISpriteData.cs" />
+     <Compile Include="Assets\NGUI\Scripts\UI\UIStretch.cs" />
+     <Compile Include="Assets\NGUI\Scripts\UI\UITextList.cs" />
+     <Compile Include="Assets\NGUI\Scripts\UI\UITexture.cs" />
+     <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
+     <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Bson\BsonBinaryType.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Bson\BsonBinaryWriter.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Bson\BsonObjectId.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Bson\BsonReader.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Bson\BsonToken.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Bson\BsonType.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Bson\BsonWriter.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\ConstructorHandling.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Converters\BinaryConverter.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Converters\BsonObjectIdConverter.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Converters\CustomCreationConverter.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Converters\DataSetConverter.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Converters\DataTableConverter.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Converters\DateTimeConverterBase.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Converters\DiscriminatedUnionConverter.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Converters\EntityKeyMemberConverter.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Converters\ExpandoObjectConverter.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Converters\IsoDateTimeConverter.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Converters\JavaScriptDateTimeConverter.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Converters\JsonValueConverter.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Converters\KeyValuePairConverter.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Converters\RegexConverter.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Converters\StringEnumConverter.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Converters\VersionConverter.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Converters\XmlNodeConverter.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\DateFormatHandling.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\DateParseHandling.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\DateTimeZoneHandling.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\DefaultValueHandling.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\FloatFormatHandling.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\FloatParseHandling.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\FormatterAssemblyStyle.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Formatting.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\IJsonLineInfo.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\JsonArrayAttribute.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\JsonConstructorAttribute.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\JsonContainerAttribute.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\JsonConvert.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\JsonConverter.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\JsonConverterAttribute.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\JsonConverterCollection.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\JsonDictionaryAttribute.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\JsonException.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\JsonExtensionDataAttribute.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\JsonIgnoreAttribute.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\JsonObjectAttribute.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\JsonPosition.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\JsonPropertyAttribute.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\JsonReader.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\JsonReaderException.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\JsonSerializationException.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\JsonSerializer.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\JsonSerializerSettings.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\JsonTextReader.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\JsonTextWriter.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\JsonToken.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\JsonValidatingReader.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\JsonWriter.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\JsonWriterException.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Linq\Extensions.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Linq\IJEnumerable.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Linq\JArray.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Linq\JConstructor.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Linq\JContainer.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Linq\JEnumerable.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Linq\JObject.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Linq\JProperty.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Linq\JPropertyDescriptor.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Linq\JPropertyKeyedCollection.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Linq\JRaw.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Linq\JToken.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Linq\JTokenEqualityComparer.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Linq\JTokenReader.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Linq\JTokenType.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Linq\JTokenWriter.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Linq\JValue.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Linq\JsonMergeSettings.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Linq\JsonPath\ArrayIndexFilter.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Linq\JsonPath\ArrayMultipleIndexFilter.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Linq\JsonPath\ArraySliceFilter.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Linq\JsonPath\FieldFilter.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Linq\JsonPath\FieldMultipleFilter.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Linq\JsonPath\JPath.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Linq\JsonPath\PathFilter.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Linq\JsonPath\QueryExpression.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Linq\JsonPath\QueryFilter.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Linq\JsonPath\ScanFilter.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Linq\MergeArrayHandling.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\MemberSerialization.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\MetadataPropertyHandling.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\MissingMemberHandling.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\NullValueHandling.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\ObjectCreationHandling.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\PreserveReferencesHandling.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Properties\AssemblyInfo.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\ReferenceLoopHandling.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Required.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Schema\Extensions.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Schema\JsonSchema.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Schema\JsonSchemaBuilder.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Schema\JsonSchemaConstants.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Schema\JsonSchemaException.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Schema\JsonSchemaGenerator.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Schema\JsonSchemaModel.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Schema\JsonSchemaModelBuilder.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Schema\JsonSchemaNode.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Schema\JsonSchemaNodeCollection.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Schema\JsonSchemaResolver.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Schema\JsonSchemaType.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Schema\JsonSchemaWriter.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Schema\UndefinedSchemaIdHandling.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Schema\ValidationEventArgs.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Schema\ValidationEventHandler.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\CachedAttributeGetter.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\CamelCasePropertyNamesContractResolver.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\DefaultContractResolver.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\DefaultReferenceResolver.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\DefaultSerializationBinder.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\DiagnosticsTraceWriter.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\DynamicValueProvider.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\ErrorContext.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\ErrorEventArgs.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\ExpressionValueProvider.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\IAttributeProvider.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\IContractResolver.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\IReferenceResolver.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\ITraceWriter.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\IValueProvider.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\JsonArrayContract.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\JsonContainerContract.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\JsonContract.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\JsonDictionaryContract.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\JsonDynamicContract.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\JsonFormatterConverter.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\JsonISerializableContract.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\JsonLinqContract.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\JsonObjectContract.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\JsonPrimitiveContract.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\JsonProperty.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\JsonPropertyCollection.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\JsonSerializerInternalBase.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\JsonSerializerInternalReader.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\JsonSerializerInternalWriter.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\JsonSerializerProxy.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\JsonStringContract.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\JsonTypeReflector.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\MemoryTraceWriter.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\ObjectConstructor.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\OnErrorAttribute.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\ReflectionAttributeProvider.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\ReflectionValueProvider.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\TraceJsonReader.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Serialization\TraceJsonWriter.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\SerializationBinder.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\StringEscapeHandling.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\TraceLevel.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\TypeNameHandling.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Utilities\Base64Encoder.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Utilities\BidirectionalDictionary.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Utilities\CollectionUtils.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Utilities\CollectionWrapper.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Utilities\ConvertUtils.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Utilities\DateTimeParser.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Utilities\DateTimeUtils.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Utilities\DictionaryWrapper.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Utilities\DynamicProxy.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Utilities\DynamicProxyMetaObject.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Utilities\DynamicReflectionDelegateFactory.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Utilities\DynamicUtils.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Utilities\EnumUtils.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Utilities\EnumValue.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Utilities\ExpressionReflectionDelegateFactory.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Utilities\FSharpUtils.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Utilities\ILGeneratorExtensions.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Utilities\ImmutableCollectionsUtils.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Utilities\JavaScriptUtils.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Utilities\JsonTokenUtils.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Utilities\LateBoundReflectionDelegateFactory.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Utilities\LinqBridge.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Utilities\MathUtils.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Utilities\MethodCall.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Utilities\MiscellaneousUtils.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Utilities\PropertyNameTable.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Utilities\ReflectionDelegateFactory.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Utilities\ReflectionObject.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Utilities\ReflectionUtils.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Utilities\StringBuffer.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Utilities\StringReference.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Utilities\StringUtils.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Utilities\ThreadSafeStore.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Utilities\TypeExtensions.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\Utilities\ValidationUtils.cs" />
+     <Compile Include="Assets\Newtonsoft.Json\WriteState.cs" />
+     <Compile Include="Assets\OVR\Scripts\OVRCameraRig.cs" />
+     <Compile Include="Assets\OVR\Scripts\OVRCommon.cs" />
+     <Compile Include="Assets\OVR\Scripts\OVRDisplay.cs" />
+     <Compile Include="Assets\OVR\Scripts\OVRManager.cs" />
+     <Compile Include="Assets\OVR\Scripts\OVRPluginEvent.cs" />
+     <Compile Include="Assets\OVR\Scripts\OVRTracker.cs" />
+     <Compile Include="Assets\OVR\Scripts\OvrCapi.cs" />
+     <Compile Include="Assets\OVR\Scripts\Util\OVRCrosshair.cs" />
+     <Compile Include="Assets\OVR\Scripts\Util\OVRGUI.cs" />
+     <Compile Include="Assets\OVR\Scripts\Util\OVRGamepadController.cs" />
+     <Compile Include="Assets\OVR\Scripts\Util\OVRGridCube.cs" />
+     <Compile Include="Assets\OVR\Scripts\Util\OVRMainMenu.cs" />
+     <Compile Include="Assets\OVR\Scripts\Util\OVRPlayerController.cs" />
+     <Compile Include="Assets\OVR\Scripts\Util\OVRScreenFade.cs" />
+     <Compile Include="Assets\OVR\Scripts\Util\OVRUGUI.cs" />
+     <Compile Include="Assets\OVR\Scripts\Util\OVRVisionGuide.cs" />
+     <Compile Include="Assets\Scripts\Environment\ElevatorManage.cs" />
+     <Compile Include="Assets\Scripts\Environment\ElevatorSwitcherManage.cs" />
+     <Compile Include="Assets\Scripts\Environment\EnvironmentSound.cs" />
+     <Compile Include="Assets\Scripts\Environment\EscalatorManage.cs" />
+     <Compile Include="Assets\Scripts\Environment\FixedLandmark.cs" />
+     <Compile Include="Assets\Scripts\Environment\Landmark.cs" />
+     <Compile Include="Assets\Scripts\Environment\TerrainChange.cs" />
+     <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\Menu\StartMenu.cs" />
+     <Compile Include="Assets\Scripts\MiniMapCamera.cs" />
+     <Compile Include="Assets\Scripts\Player\CaneDetector.cs" />
+     <Compile Include="Assets\Scripts\Player\CaneSweep.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerAudio.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\Tags.cs" />
+     <Compile Include="Assets\Scripts\Task\ExplorationTask.cs" />
+     <Compile Include="Assets\Scripts\Task\Graph.cs" />
+     <Compile Include="Assets\Scripts\Task\Path.cs" />
+     <Compile Include="Assets\Scripts\Task\TaskEvent.cs" />
+     <Compile Include="Assets\Scripts\Task\TaskGenerater.cs" />
+     <Compile Include="Assets\Scripts\Task\TaskLinkedList.cs" />
+     <Compile Include="Assets\Scripts\Task\TaskNode.cs" />
+     <Compile Include="Assets\Scripts\VirtualNFCTags\Models\Building.cs" />
+     <Compile Include="Assets\Scripts\VirtualNFCTags\Models\DTO_BaseNavInstructionUnitTest.cs" />
+     <Compile Include="Assets\Scripts\VirtualNFCTags\Models\StringProcess.cs" />
+     <Compile Include="Assets\Scripts\VirtualNFCTags\Network\ServerGet.cs" />
+     <Compile Include="Assets\Scripts\VirtualNFCTags\Network\SignalRUnityController.cs" />
+     <Compile Include="Assets\Scripts\VirtualNFCTags\RFTag.cs" />
+     <Compile Include="Assets\Scripts\VirtualNFCTags\TriggerBody.cs" />
+     <Compile Include="Assets\Scripts\VirtualNFCTags\VirtualTag.cs" />
+     <Compile Include="Assets\uSignalR\Connection.cs" />
+     <Compile Include="Assets\uSignalR\ConnectionExtensions.cs" />
+     <Compile Include="Assets\uSignalR\ConnectionState.cs" />
+     <Compile Include="Assets\uSignalR\DisposableAction.cs" />
+     <Compile Include="Assets\uSignalR\HeaderDictionary.cs" />
+     <Compile Include="Assets\uSignalR\Http\DefaultHttpClient.cs" />
+     <Compile Include="Assets\uSignalR\Http\HttpHelper.cs" />
+     <Compile Include="Assets\uSignalR\Http\HttpWebRequestWrapper.cs" />
+     <Compile Include="Assets\uSignalR\Http\HttpWebResponseWrapper.cs" />
+     <Compile Include="Assets\uSignalR\Http\IHttpClient.cs" />
+     <Compile Include="Assets\uSignalR\Http\IRequest.cs" />
+     <Compile Include="Assets\uSignalR\Http\IResponse.cs" />
+     <Compile Include="Assets\uSignalR\Http\ResponseExtensions.cs" />
+     <Compile Include="Assets\uSignalR\Hubs\HubConnection.cs" />
+     <Compile Include="Assets\uSignalR\Hubs\HubInvocation.cs" />
+     <Compile Include="Assets\uSignalR\Hubs\HubMethodAttribute.cs" />
+     <Compile Include="Assets\uSignalR\Hubs\HubProxy.cs" />
+     <Compile Include="Assets\uSignalR\Hubs\HubRegistrationData.cs" />
+     <Compile Include="Assets\uSignalR\Hubs\HubResult.cs" />
+     <Compile Include="Assets\uSignalR\Hubs\Hubservable.cs" />
+     <Compile Include="Assets\uSignalR\Hubs\IHubProxy.cs" />
+     <Compile Include="Assets\uSignalR\Hubs\IObservable.cs" />
+     <Compile Include="Assets\uSignalR\Hubs\IObserver.cs" />
+     <Compile Include="Assets\uSignalR\Hubs\ProxyExtensions.cs" />
+     <Compile Include="Assets\uSignalR\Hubs\Subscription.cs" />
+     <Compile Include="Assets\uSignalR\IConnection.cs" />
+     <Compile Include="Assets\uSignalR\Infrastructure\DisposableAction.cs" />
+     <Compile Include="Assets\uSignalR\Infrastructure\StreamExtensions.cs" />
+     <Compile Include="Assets\uSignalR\Infrastructure\TaskAsyncHelper.cs" />
+     <Compile Include="Assets\uSignalR\Infrastructure\UriQueryUtility.cs" />
+     <Compile Include="Assets\uSignalR\NegotiationResponse.cs" />
+     <Compile Include="Assets\uSignalR\StateChange.cs" />
+     <Compile Include="Assets\uSignalR\TraceLevels.cs" />
+     <Compile Include="Assets\uSignalR\Transports\AsyncStreamReader.cs" />
+     <Compile Include="Assets\uSignalR\Transports\AutoTransport.cs" />
+     <Compile Include="Assets\uSignalR\Transports\CancellationTokenSource.cs" />
+     <Compile Include="Assets\uSignalR\Transports\HttpBasedTransport.cs" />
+     <Compile Include="Assets\uSignalR\Transports\IClientTransport.cs" />
+     <Compile Include="Assets\uSignalR\Transports\LongPollingTransport.cs" />
+     <Compile Include="Assets\uSignalR\Transports\ServerSentEvents\ChunkBuffer.cs" />
+     <Compile Include="Assets\uSignalR\Transports\ServerSentEvents\EventType.cs" />
+     <Compile Include="Assets\uSignalR\Transports\ServerSentEvents\SseEvent.cs" />
+     <Compile Include="Assets\uSignalR\Transports\ServerSentEventsTransport.cs" />
+     <Compile Include="Assets\uTasks\AggregateException.cs" />
+     <Compile Include="Assets\uTasks\CancellationToken.cs" />
+     <Compile Include="Assets\uTasks\CancellationTokenSource.cs" />
+     <Compile Include="Assets\uTasks\Executor.cs" />
+     <Compile Include="Assets\uTasks\MainThread.cs" />
+     <Compile Include="Assets\uTasks\Task.cs" />
+     <Compile Include="Assets\uTasks\TaskCompletionSource.cs" />
+     <Compile Include="Assets\uTasks\TaskFactory.cs" />
+     <Compile Include="Assets\uTasks\TaskStatus.cs" />
+     <Compile Include="Assets\uTasks\Task`1.cs" />
+     <Compile Include="Assets\uTasks\UnityMainThread.cs" />
+     <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth Cutout.shader" />
+     <None Include="Assets\NGUI\ReadMe - 3.9.2.txt" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Masked 1.shader" />
+     <None Include="Assets\Plugins\donotdelete.txt" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text 2.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Masked 2.shader" />
+     <None Include="Assets\NGUI\Examples\Models\Orc\Orc Skin.shader" />
+     <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo20.txt" />
+     <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo14.txt" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text 1.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored (TextureClip).shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (TextureClip).shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored 2.shader" />
+     <None Include="Assets\NGUI\Examples\Shaders\Unlit - Masked Colored.shader" />
+     <None Include="Assets\Plugins\x86_64\donotdelete.txt" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 3.shader" />
+     <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo18.txt" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (TextureClip).shader" />
+     <None Include="Assets\NGUI\Examples\Atlases\SciFi\SciFi Font - Header.txt" />
+     <None Include="Assets\OVR\Shaders\TextShader3D.shader" />
+     <None Include="Assets\Minimap\Shader\Transparent_Outline.shader" />
+     <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Masked 3.shader" />
+     <None Include="Assets\Minimap\Shader\MaskShader.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored 1.shader" />
+     <None Include="Assets\NGUI\Examples\Atlases\Fantasy\Fantasy Font - Normal.txt" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored 3.shader" />
+     <None Include="Assets\NGUI\Examples\Atlases\Refractive\Refractive Font - Normal.txt" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 2.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text 3.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed 2.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed 1.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 1.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored.shader" />
+     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed 3.shader" />
+     <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
+     <None Include="Assets\NGUI\Examples\Shaders\Unlit - Additive Colored.shader" />
+     <None Include="Assets\OVR\Shaders\OVRGUIShader.shader" />
+     <None Include="Assets\Plugins\x86\donotdelete.txt" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Masked.shader" />
+     <None Include="Assets\NGUI\Examples\Atlases\Refractive\Refractive Font - Header.txt" />
+     <None Include="Assets\NGUI\Examples\Shaders\Refractive.shader" />
+     <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text (TextureClip).shader" />
+     <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth.shader" />
+     <None Include="Assets\NGUI\Examples\Atlases\SciFi\SciFi Font - Normal.txt" />
+     <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
+     <None Include="Assets\NGUI\Examples\Models\Orc Armor\Orc Armor.shader" />
+     <None Include="Assets\NGUI\Examples\Resources\Localization.txt" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+ <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">
+      <Project>{B455AC7C-5D53-3CD9-3A71-A895D28A4501}</Project>      <Name>Assembly-CSharp-firstpass-vs</Name>    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
