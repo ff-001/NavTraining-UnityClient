@@ -1,2 +1,6 @@
 Library
 Temp
+UnityVS.PERCEIVE.CSharp.csproj
+UnityVS.PERCEIVE.CSharp.Editor.csproj
+UnityVS.PERCEIVE.CSharp.Plugins.csproj
+UnityVS.PERCEIVE.sln
