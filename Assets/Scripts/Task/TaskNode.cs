@@ -32,3 +32,21 @@ public class TaskNode<T>{
 		prev = null;
 	}
 }
+
+
+public class TaskObject
+{
+	public long ID { get; set; }
+	
+	public int SourceID { get; set; }
+	
+	public int DestinationID { get; set; }
+	
+	public int SelectLevel { get; set; }
+	
+	public string Instruction { get; set; }
+	
+	public int SelectTransmitType { get; set; }
+	
+	public int FaultCount { get; set; }
+}

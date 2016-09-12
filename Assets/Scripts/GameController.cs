@@ -23,6 +23,7 @@ public class GameController : MonoBehaviour {
 	private GameObject player;
 	private PlayerController playerController;
 	private Vector3 PlayerStartPosition = Vector3.zero;
+
 	private Landmark[] taskLandmarks;
 	
 	public string playerType = PlayerType.Scene;
@@ -72,7 +73,7 @@ public class GameController : MonoBehaviour {
 	void OnPlayerInitial(){
 		player = GameObject.FindGameObjectWithTag(UnityTag.Player);
 		if(trainingMode == TrainingMode.SelfExploration){
-			player.GetComponent<TaskEvent>().TaskInitial(taskLandmarks);
+			player.GetComponent<TaskEvent>().Setup(taskLandmarks);
 		}
 		else if(trainingMode == TrainingMode.PerceptApp){
 			player.GetComponent<TaskEvent>().enabled = false;

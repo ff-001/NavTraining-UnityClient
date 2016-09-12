@@ -5,6 +5,9 @@ using uSignalR.Hubs;
 using JetBrains.Annotations;
 using uTasks;
 using UnityEngine.UI;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 
 public class Message{
 	public string username {get;set;}
@@ -27,6 +30,7 @@ public class SignalRUnityController : MonoBehaviour {
 	private IHubProxy _hubProxy;
 	
 	public Subscription _subscription;
+	public Subscription _taskSubscription;
 
 	void Awake(){
 		MainThread.Current = new UnityMainThread();
@@ -55,7 +59,7 @@ public class SignalRUnityController : MonoBehaviour {
 
 		if (Input.GetKeyDown(KeyCode.S))
 		{
-			Send("hello from unity");
+			TaskRequest(9);
 		}
 	}
 
@@ -69,12 +73,12 @@ public class SignalRUnityController : MonoBehaviour {
 			//			_subscription = _hubProxy.Subscribe("test");
 			_hubProxy = _hubConnection.CreateProxy("SignalRHub");
 			_subscription = _hubProxy.Subscribe("broadcastMessage");
-			_subscription.Data += data =>
+			_taskSubscription = _hubProxy.Subscribe("getTask");
+			_taskSubscription.Data += data =>
 			{
 				Debug.Log("signalR called us back");
 			};
-			
-			_subscription.Data += OnData;
+			//_subscription.Data += OnData;
 			_hubConnection.Start();
 			
 			//			_hubProxy.Invoke("PairDevices", groupName);
@@ -97,6 +101,11 @@ public class SignalRUnityController : MonoBehaviour {
 
 	void OnData(object[] data)
 	{
+		IList collection = (IList)data[0];
+		IEnumerable<TaskObject> node = JsonConvert.DeserializeObject<IEnumerable<TaskObject>>(data[0].ToString());
+		foreach (TaskObject i in node){
+			TaskObject t = i;
+		}
 		result = data[0]+":"+data[1];
 		Debug.Log(data[0]+":"+data[1]);
 	} 
@@ -107,6 +116,14 @@ public class SignalRUnityController : MonoBehaviour {
 			return;
 		_hubProxy.Invoke("send", "Unity", 
 		                 message);
+	}
+
+	public void TaskRequest(long TrainingId)
+	{
+		if (!useSignalR)
+			return;
+		_hubProxy.Invoke("taskrequest",
+		                 9);
 	}
 	
 }
