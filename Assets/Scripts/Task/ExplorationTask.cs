@@ -9,6 +9,7 @@ public class ExplorationTask {
 	public string Instruction{get; set;}
 	public Vector3 BeginPosition{get; set;}
 	public Landmark Id{get; set;}
+	public long remoteID {get; set;}
 
 	public ExplorationTask(bool triggerState, bool triggerWaiting, string instruction){
 		this.TriggerState = triggerState;
@@ -22,12 +23,13 @@ public class ExplorationTask {
 		this.Instruction = instruction;
 	}
 
-	public ExplorationTask(string instruction, Landmark id){
+	public ExplorationTask(string instruction, Landmark id, long remoteID){
 		this.Id = id;
 		this.TriggerState = false;
 		this.TriggerWaiting = false;
 		this.Instruction = instruction;
 		this.BeginPosition = Id.position;
+		this.remoteID = remoteID;
 	}
 
 	public void ReadInstruction(){

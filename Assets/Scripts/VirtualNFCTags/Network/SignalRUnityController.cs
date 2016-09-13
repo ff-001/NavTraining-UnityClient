@@ -59,7 +59,7 @@ public class SignalRUnityController : MonoBehaviour {
 
 		if (Input.GetKeyDown(KeyCode.S))
 		{
-			TaskRequest(9);
+			UpdatePosition("HaoD", 1, "x = 7", 3);
 		}
 	}
 
@@ -118,12 +118,22 @@ public class SignalRUnityController : MonoBehaviour {
 		                 message);
 	}
 
+	public void UpdatePosition(string username, int trainingID, string position, long taskID)
+	{
+		if (!useSignalR)
+			return;
+		if (trainingID == 2)
+		{
+			taskID = -1;
+		}
+		_hubProxy.Invoke("updatepause", username, trainingID, position, taskID);
+	}
+
 	public void TaskRequest(long TrainingId)
 	{
 		if (!useSignalR)
 			return;
-		_hubProxy.Invoke("taskrequest",
-		                 9);
+		_hubProxy.Invoke("taskrequest", 9);
 	}
 	
 }

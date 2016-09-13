@@ -5,9 +5,11 @@ using System.Collections.Generic;
 public class Edge{
 	public string Instruction{set; get;}
 	public Landmark StartPoint{set; get;}
-	public Edge(Landmark _sp,string _ins){
+	public long remoteTaskID {set; get;}
+	public Edge(Landmark _sp,string _ins, long _id){
 		this.StartPoint = _sp;
 		this.Instruction = _ins;
+		this.remoteTaskID = _id;
 	}
 }
 
@@ -107,7 +109,7 @@ public class Graph{
 	{
 		string pair = t.SourceID + "-" + t.DestinationID;
 		var sourceLandmark = LandMarkerToNum[t.SourceID];
-		EdgeList.Add(pair, new Edge(sourceLandmark, t.Instruction));
+		EdgeList.Add(pair, new Edge(sourceLandmark, t.Instruction, t.ID));
 	}
 
 	public List<Edge> FindWay(Landmark[] landmarks){

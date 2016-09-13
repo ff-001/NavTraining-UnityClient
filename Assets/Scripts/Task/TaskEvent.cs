@@ -9,7 +9,7 @@ using Tags;
 public class TaskEvent : MonoBehaviour {
 
 	TaskLinkedList<ExplorationTask> taskLinkedList;
-	TaskNode<ExplorationTask> currentTask;
+	public TaskNode<ExplorationTask> currentTask;
 	Graph mapGraph;
 	List<Edge> testList;
 	Vector3 PlayerStartPosition = Vector3.zero;
@@ -44,7 +44,7 @@ public class TaskEvent : MonoBehaviour {
 		}
 		testList = mapGraph.FindWay(taskLandmarks);
 		foreach(Edge c in testList){
-			taskLinkedList.Add(new ExplorationTask(c.Instruction, c.StartPoint));
+			taskLinkedList.Add(new ExplorationTask(c.Instruction, c.StartPoint, c.remoteTaskID));
 			Debug.Log(c.StartPoint.name);
 		}
 		currentTask = taskLinkedList.FindNode(1);
@@ -83,7 +83,7 @@ public class TaskEvent : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
-		if (initial == false && taskLinkedList.Count == 0)
+		if (GameController._instance.trainingMode == TrainingMode.SelfExploration && initial == false && taskLinkedList.Count == 0)
 		{
 			System.Diagnostics.Process.Start("say", "Are you ready? Please press space button to accept your tasks?");
 			initial = true;

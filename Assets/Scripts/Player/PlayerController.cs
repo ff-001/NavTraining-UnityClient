@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System;
 using System.Collections;
+using UnityEditor;
+using Tags;
 
 /* Movement controller of virtual player */
 
@@ -53,11 +55,16 @@ public class PlayerController : MonoBehaviour
 	private bool prevHatLeft = false;
 	private bool prevHatRight = false;
 
+	private SignalRUnityController signalR;
+	private TaskEvent task;
+
 	void Awake()
 	{
 		player = this.GetComponent<Rigidbody>();
 		OVRCameraRig[] CameraControllers;
 		CameraControllers = gameObject.GetComponentsInChildren<OVRCameraRig>();
+		if (GameController._instance.trainingMode == TrainingMode.SelfExploration)
+			task = this.GetComponent<TaskEvent>();
 		
 		if(CameraControllers.Length == 0)
 			Debug.LogWarning("OVRPlayerController: No OVRCameraRig attached.");
@@ -69,6 +76,8 @@ public class PlayerController : MonoBehaviour
 		YRotation = transform.rotation.eulerAngles.y;
 		rightAudioController = RightAudio.GetComponent<PlayerAudio>();
 		leftAudioController = LeftAudio.GetComponent<PlayerAudio>();
+
+		signalR = GameObject.FindGameObjectWithTag(UnityTag.SignalR).GetComponent<SignalRUnityController>();
 	}
 
 	void Start(){
@@ -122,7 +131,27 @@ public class PlayerController : MonoBehaviour
 			Movement();
 		}
 
+		if(Input.GetKeyDown(KeyCode.P)){
+			PauseGame();
+		}
 
+	}
+
+	public void QuitTraining()
+	{
+		UnityEditor.EditorApplication.isPlaying = false;
+	}
+
+	public void PauseGame()
+	{
+		if (EditorUtility.DisplayDialog("Training has Paused.",
+		                            "Exit the training now?", "Yes", "No")) {
+			long currentTaskID = -1;
+			if(GameController._instance.trainingMode == TrainingMode.SelfExploration)
+				currentTaskID = task.currentTask.Data.remoteID;
+			signalR.UpdatePosition("HaoD", 1, player.position.ToString(), currentTaskID);
+			Invoke("QuitTraining", 2);
+		}
 	}
 
 	// Lock the player direction. if locked, player can’t move with another directions.
@@ -361,12 +390,12 @@ public class PlayerController : MonoBehaviour
 		
 		prevHatRight = curHatRight;
 		
-		//Use keys to ratchet rotation
-		if (Input.GetKeyDown(KeyCode.Q))
-			euler.y -= RotationRatchet;
-		
-		if (Input.GetKeyDown(KeyCode.E))
-			euler.y += RotationRatchet;
+//		//Use keys to ratchet rotation
+//		if (Input.GetKeyDown(KeyCode.Q))
+//			euler.y -= RotationRatchet;
+//		
+//		if (Input.GetKeyDown(KeyCode.E))
+//			euler.y += RotationRatchet;
 		
 		float rotateInfluence = SimulationRate * Time.deltaTime * RotationAmount * RotationScaleMultiplier;
 
