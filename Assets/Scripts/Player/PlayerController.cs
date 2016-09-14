@@ -54,8 +54,7 @@ public class PlayerController : MonoBehaviour
 	private float RotationScaleMultiplier = 1.0f;
 	private bool prevHatLeft = false;
 	private bool prevHatRight = false;
-
-	private SignalRUnityController signalR;
+	
 	private TaskEvent task;
 
 	void Awake()
@@ -77,7 +76,6 @@ public class PlayerController : MonoBehaviour
 		rightAudioController = RightAudio.GetComponent<PlayerAudio>();
 		leftAudioController = LeftAudio.GetComponent<PlayerAudio>();
 
-		signalR = GameObject.FindGameObjectWithTag(UnityTag.SignalR).GetComponent<SignalRUnityController>();
 	}
 
 	void Start(){
@@ -149,7 +147,7 @@ public class PlayerController : MonoBehaviour
 			long currentTaskID = -1;
 			if(GameController._instance.trainingMode == TrainingMode.SelfExploration)
 				currentTaskID = task.currentTask.Data.remoteID;
-			signalR.UpdatePosition("HaoD", 1, player.position.ToString(), currentTaskID);
+			SignalRUnityController._instance.UpdatePosition("HaoD", 1, player.position.ToString(), currentTaskID);
 			Invoke("QuitTraining", 2);
 		}
 	}

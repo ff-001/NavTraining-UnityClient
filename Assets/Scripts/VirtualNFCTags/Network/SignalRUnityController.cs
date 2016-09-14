@@ -17,10 +17,12 @@ public class Message{
 public class SignalRUnityController : MonoBehaviour {
 //	[SerializeField] private Text _resultText;
 
+	public static SignalRUnityController _instance;
+
 	private CancellationTokenSource _tokenSource;
 	
 	bool useSignalR = true;
-	string signalRUrl = "http://perceiveserver.azurewebsites.net";
+	string signalRUrl = "http://perceive.azurewebsites.net/";
 	//string signalRUrl = "http://percept.ecs.umass.edu/perceptsiri";
 	//string signalRUrl = "http://sis2.ecs.umass.edu/SignalRChat/";
 	
@@ -33,6 +35,10 @@ public class SignalRUnityController : MonoBehaviour {
 	public Subscription _taskSubscription;
 
 	void Awake(){
+		if (_instance == null)
+		{
+			_instance = this;
+		}
 		MainThread.Current = new UnityMainThread();
 	}
 	

@@ -13,7 +13,7 @@ public class TaskEvent : MonoBehaviour {
 	Graph mapGraph;
 	List<Edge> testList;
 	Vector3 PlayerStartPosition = Vector3.zero;
-	private SignalRUnityController signalR;
+
 
 	bool initial = false;
 
@@ -22,18 +22,17 @@ public class TaskEvent : MonoBehaviour {
 	void Awake(){
 		taskLinkedList = new TaskLinkedList<ExplorationTask>();
 		mapGraph = new Graph();
-		signalR = GameObject.FindGameObjectWithTag(UnityTag.SignalR).GetComponent<SignalRUnityController>();
 	}
 
 	public void Setup(Landmark[] _taskLandmarks)
 	{
 		this.taskLandmarks = _taskLandmarks;
-		signalR._taskSubscription.Data += OnTaskLoading;
+		SignalRUnityController._instance._taskSubscription.Data += OnTaskLoading;
 	}
 
 	// Initialize the tasks, get current task.
 	public void TaskInitial(){
-		signalR.TaskRequest(9);
+		SignalRUnityController._instance.TaskRequest(9);
 	}
 
 	void OnTaskLoading(object[] data)

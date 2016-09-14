@@ -23,7 +23,6 @@ public class TriggerBody : MonoBehaviour {
 	private bool tagIsScanned = false;
 	private int direct = 0;
 	private int playerLastDirection; // for direction change detect
-	private SignalRUnityController signalR;
 	private bool tagIdSend = false;
 
 	void Awake(){
@@ -33,7 +32,6 @@ public class TriggerBody : MonoBehaviour {
 		DestinationID = virtualTagManage.DestinationId;
 		RFID = virtualTagManage.RFID;
 		TagOpening = virtualTagManage.TagOpening;
-		signalR = GameObject.FindGameObjectWithTag(UnityTag.SignalR).GetComponent<SignalRUnityController>();
 	}
 
 	// Use this for initialization
@@ -43,7 +41,7 @@ public class TriggerBody : MonoBehaviour {
 	
 	void OnTriggerEnter(Collider other){
 		if(other.gameObject.tag == UnityTag.Player){
-			signalR._subscription.Data += ScanTag;
+			SignalRUnityController._instance._subscription.Data += ScanTag;
 			tagIsScanned = false;
 			tagIdSend = false;
 			InArea = true;
@@ -74,7 +72,7 @@ public class TriggerBody : MonoBehaviour {
 			} 
 			if(tagIsScanned == true){
 				if(tagIdSend == false){
-					signalR.Send(RFID.ToString());
+					SignalRUnityController._instance.Send(RFID.ToString());
 					scanTagSound.Play();
 					tagIdSend = true;
 				}
