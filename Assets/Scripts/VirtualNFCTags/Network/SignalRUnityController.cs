@@ -8,6 +8,7 @@ using UnityEngine.UI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 
 public class Message{
 	public string username {get;set;}
@@ -30,9 +31,12 @@ public class SignalRUnityController : MonoBehaviour {
 	
 	private HubConnection _hubConnection = null;
 	private IHubProxy _hubProxy;
-	
+
 	public Subscription _subscription;
 	public Subscription _taskSubscription;
+	public Subscription _loginSubscription;
+
+	public static string Username;
 
 	void Awake(){
 		if (_instance == null)
@@ -74,16 +78,19 @@ public class SignalRUnityController : MonoBehaviour {
 		if (_hubConnection == null)
 		{
 			_hubConnection = new HubConnection(signalRUrl);
-			
-			//			_hubProxy = _hubConnection.CreateProxy("SmartphoneHub");
-			//			_subscription = _hubProxy.Subscribe("test");
+
 			_hubProxy = _hubConnection.CreateProxy("SignalRHub");
+
 			_subscription = _hubProxy.Subscribe("broadcastMessage");
 			_taskSubscription = _hubProxy.Subscribe("getTask");
-			_taskSubscription.Data += data =>
-			{
-				Debug.Log("signalR called us back");
-			};
+			_loginSubscription = _hubProxy.Subscribe("login");
+
+			_loginSubscription.Data += OnLog;
+
+//			_taskSubscription.Data += data =>
+//			{
+//				Debug.Log("signalR called us back");
+//			};
 			//_subscription.Data += OnData;
 			_hubConnection.Start();
 			
@@ -103,6 +110,15 @@ public class SignalRUnityController : MonoBehaviour {
 		else
 			Debug.Log("Signalr already connected...");
 		
+	}
+
+	void OnLog(object[] data)
+	{
+		string response = data[0].ToString();
+		if (response == "Success")
+		{
+			Username = data[1].ToString();
+		}
 	}
 
 	void OnData(object[] data)
@@ -141,6 +157,19 @@ public class SignalRUnityController : MonoBehaviour {
 			return;
 		_hubProxy.Invoke("taskrequest", 9);
 	}
-	
+
+	public void Login(string username, string password)
+	{
+		if (!useSignalR)
+			return;
+		_hubProxy.Invoke("userlogin", username, password);
+	}
+
+	public void Logout()
+	{
+		if (!useSignalR)
+			return;
+		_hubProxy.Invoke("userlogout", Username);
+	}
 }
 

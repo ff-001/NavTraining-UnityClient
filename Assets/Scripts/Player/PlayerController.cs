@@ -146,8 +146,9 @@ public class PlayerController : MonoBehaviour
 		                            "Exit the training now?", "Yes", "No")) {
 			long currentTaskID = -1;
 			if(GameController._instance.trainingMode == TrainingMode.SelfExploration)
-				currentTaskID = task.currentTask.Data.remoteID;
-			SignalRUnityController._instance.UpdatePosition("HaoD", 1, player.position.ToString(), currentTaskID);
+			//	currentTaskID = task.currentTask.Data.remoteID;
+			//SignalRUnityController._instance.UpdatePosition("HaoD", 1, player.position.ToString(), currentTaskID);
+			SignalRUnityController._instance.Logout();
 			Invoke("QuitTraining", 2);
 		}
 	}
