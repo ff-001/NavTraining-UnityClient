@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Tags;
-
+using System;
 /* Provide an user interface for setting game mode, and initialize the game */
 
 public class GameController : MonoBehaviour {
@@ -32,33 +32,61 @@ public class GameController : MonoBehaviour {
 	public string out_in = Out_In.Out;
 	public string trainingMode = TrainingMode.SelfExploration;
 
+	bool isInistial = false;
+	bool isTrainingLoaded = false;
+
 	void Awake(){
 		_instance = this;
-		GetModeSetting();
+
 	}
 	// Use this for initialization
 	void Start () {
+		GetModeSetting();
+	}
+
+	void Update()
+	{
+		if (!isInistial)
+		{
+			isInistial = true;
+
+			// get training recording from server
+			Invoke("GetTraining", 5);
+		}
+	}
+
+	void GetTraining()
+	{
+		int trainingType = 0;
+		if(trainingMode == TrainingMode.SelfExploration){
+			trainingType = 1;
+		}
+		else if(trainingMode == TrainingMode.PerceptApp){
+			trainingType = 2;
+		}
+		SignalRUnityController._instance.GetTraining(trainingType);
 		taskLandmarks = TaskGenerater._instance.SetNewTask(entrance, transmitMode, out_in);
 		PlayerStartPosition = taskLandmarks[0].position;
 		if(trainingMode == TrainingMode.SelfExploration){
-				VirtualTags.SetActive(false);
+			VirtualTags.SetActive(false);
 		}
 		else if(trainingMode == TrainingMode.PerceptApp){
-
+			
 		}
 		if(playerType == PlayerType.Oculus){
-				GameObject oculusgo = Instantiate(OculusPlayerPrefab, PlayerStartPosition, Quaternion.identity) as GameObject;
-				oculusgo.transform.parent = GameObject.FindGameObjectWithTag(UnityTag.OculusObjects).transform;
-				SceneObjects.SetActive(false);
+			GameObject oculusgo = Instantiate(OculusPlayerPrefab, PlayerStartPosition, Quaternion.identity) as GameObject;
+			oculusgo.transform.parent = GameObject.FindGameObjectWithTag(UnityTag.OculusObjects).transform;
+			SceneObjects.SetActive(false);
 		}else if(playerType == PlayerType.Scene){
-				GameObject scenego = Instantiate(ScenePlayerPrefab,  PlayerStartPosition, Quaternion.identity) as GameObject;
-				scenego.transform.parent = GameObject.FindGameObjectWithTag(UnityTag.SceneObjects).transform;
-				OculusObjects.SetActive(false);
+			GameObject scenego = Instantiate(ScenePlayerPrefab,  PlayerStartPosition, Quaternion.identity) as GameObject;
+			scenego.transform.parent = GameObject.FindGameObjectWithTag(UnityTag.SceneObjects).transform;
+			OculusObjects.SetActive(false);
 		}
-
+		
 		this.OnInitial += OnPlayerInitial;
 		OnInitial();
 	}
+	
 
 //	Initialize user settings.
 	void GetModeSetting(){
@@ -78,6 +106,5 @@ public class GameController : MonoBehaviour {
 		else if(trainingMode == TrainingMode.PerceptApp){
 			player.GetComponent<TaskEvent>().enabled = false;
 		}
-
 	}
 }

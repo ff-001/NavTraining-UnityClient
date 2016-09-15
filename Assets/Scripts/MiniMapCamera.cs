@@ -9,6 +9,8 @@ public class MiniMapCamera : MonoBehaviour {
 	private Transform target;
 
 	public Vector3 Offset = new Vector3(-8.9f, 44.5f, -1.4f);
+
+	bool isInitial = false;
 	
 	void Start(){
 		GameController._instance.OnInitial += this.OnInitial;
@@ -16,12 +18,16 @@ public class MiniMapCamera : MonoBehaviour {
 
 	void OnInitial(){
 		target = GameObject.FindGameObjectWithTag(UnityTag.Player).transform;
+		isInitial = true;
 	}
 
 	// Update is called once per frame
 	void LateUpdate () {
-		Vector3 targetPos = target.position + Offset;
-		this.transform.position = Vector3.Lerp(this.transform.position, targetPos, moveSpeed * Time.deltaTime);
+		if (isInitial)
+		{
+			Vector3 targetPos = target.position + Offset;
+			this.transform.position = Vector3.Lerp(this.transform.position, targetPos, moveSpeed * Time.deltaTime);
+		}
 	}
 	
 }

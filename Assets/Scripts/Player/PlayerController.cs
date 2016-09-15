@@ -137,7 +137,13 @@ public class PlayerController : MonoBehaviour
 
 	public void QuitTraining()
 	{
+		SignalRUnityController._instance.Logout();
 		UnityEditor.EditorApplication.isPlaying = false;
+	}
+
+	public void Logout()
+	{
+		SignalRUnityController._instance.Logout();
 	}
 
 	public void PauseGame()
@@ -146,10 +152,16 @@ public class PlayerController : MonoBehaviour
 		                            "Exit the training now?", "Yes", "No")) {
 			long currentTaskID = -1;
 			if(GameController._instance.trainingMode == TrainingMode.SelfExploration)
-			//	currentTaskID = task.currentTask.Data.remoteID;
-			//SignalRUnityController._instance.UpdatePosition("HaoD", 1, player.position.ToString(), currentTaskID);
-			SignalRUnityController._instance.Logout();
-			Invoke("QuitTraining", 2);
+			{
+				currentTaskID = task.currentTask.Data.remoteID;
+				SignalRUnityController._instance.UpdatePosition(player.position.ToString(),1, currentTaskID);
+			}
+			else 
+			{
+				SignalRUnityController._instance.UpdatePosition(player.position.ToString(),2, currentTaskID);
+			}
+			Invoke("Logout", 3);
+			Invoke("QuitTraining", 6);
 		}
 	}
 

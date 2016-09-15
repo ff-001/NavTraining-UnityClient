@@ -32,7 +32,7 @@ public class TaskEvent : MonoBehaviour {
 
 	// Initialize the tasks, get current task.
 	public void TaskInitial(){
-		SignalRUnityController._instance.TaskRequest(9);
+		SignalRUnityController._instance.TaskRequest();
 	}
 
 	void OnTaskLoading(object[] data)
@@ -58,6 +58,7 @@ public class TaskEvent : MonoBehaviour {
 		}
 		if(Input.GetKeyDown(KeyCode.Escape)){
 			BackToPrevTask();
+			SignalRUnityController._instance.FaultRecord(currentTask.Data.remoteID);
 		}
 	}
 
@@ -69,6 +70,11 @@ public class TaskEvent : MonoBehaviour {
 			if(currentTask.Next != null){
 				currentTask = currentTask.Next;
 				currentTask.Data.TriggerWaiting = true;
+			}
+			else
+			{
+				// finish the training
+				SignalRUnityController._instance.Finished();
 			}
 		}
 	}

@@ -56,32 +56,10 @@ public class StartMenu : MonoBehaviour {
 		PlayerPrefs.SetString("TransmitType", transmitType);
 		PlayerPrefs.SetString("DestinationPrefer", destinationPrefer);
 		PlayerPrefs.SetString("TrainingMode", trainingMode);
-		RecordUserPC();
-		Application.LoadLevel(1);
-	}
-	// Debug
-	void RecordUserPC() {
-		print("Client IP Address:" + "24.20.152.141");
-		print("Date: " + DateTime.Now.Month + "/" + "3" + "/" + DateTime.Now.Year + " - Time: " + DateTime.Now.Hour + ":" + DateTime.Now.Minute);
-		print("Last point: " + "x = 12.26382; y = 4.326715; z = 86.3265118");
-		print("Last Task: Entrance544ToRightWaitingLineByStair");
-	}
 
-	string GetClientIPAddr() {
-		string userIp = "";
-		NetworkInterface[] adapters = NetworkInterface.GetAllNetworkInterfaces();
-		foreach (NetworkInterface adapter in adapters){
-			UnicastIPAddressInformationCollection uniCast = adapter.GetIPProperties().UnicastAddresses;
-			if (uniCast.Count > 0){
-				foreach (UnicastIPAddressInformation uni in uniCast) {
-					if (uni.Address.AddressFamily == AddressFamily.InterNetwork) {
-						userIp = uni.Address.ToString();
-					}
-				}
-			}
-		}
-		return userIp;
+		Application.LoadLevel("MainScene");
 	}
+	
 		
 
 }

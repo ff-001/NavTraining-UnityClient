@@ -6293,7 +6293,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1170832399}
-  - {fileID: 1304680884}
   m_Father: {fileID: 0}
   m_RootOrder: 9
 --- !u!1 &593857001
@@ -15393,45 +15392,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 440932, guid: 24eee93b381a548168d1cfecfbcd6ecd, type: 2}
   m_PrefabInternal: {fileID: 1298935681}
---- !u!1 &1304680883
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1304680884}
-  - 114: {fileID: 1304680885}
-  m_Layer: 0
-  m_Name: SignalR
-  m_TagString: SignalR
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1304680884
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1304680883}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 592574864}
-  m_RootOrder: 1
---- !u!114 &1304680885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1304680883}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6afe931aa29b94f46a78b85ab942647d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1315546592
 GameObject:
   m_ObjectHideFlags: 0

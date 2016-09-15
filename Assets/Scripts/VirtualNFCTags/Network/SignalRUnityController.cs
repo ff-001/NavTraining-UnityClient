@@ -35,8 +35,13 @@ public class SignalRUnityController : MonoBehaviour {
 	public Subscription _subscription;
 	public Subscription _taskSubscription;
 	public Subscription _loginSubscription;
+	public Subscription _trainingSubscription;
 
 	public static string Username;
+	public static int TrainingId;
+
+	public static string TrainingPosition {get; set;}
+	public static int CurrentTask{get; set;}
 
 	void Awake(){
 		if (_instance == null)
@@ -61,6 +66,11 @@ public class SignalRUnityController : MonoBehaviour {
 			});
 	}
 
+	public string GetTrainingPosition()
+	{
+		return TrainingPosition;
+	}
+
 	void Update(){
 		if(result != null){
 			//			_resultText.text = result;
@@ -69,7 +79,7 @@ public class SignalRUnityController : MonoBehaviour {
 
 		if (Input.GetKeyDown(KeyCode.S))
 		{
-			UpdatePosition("HaoD", 1, "x = 7", 3);
+
 		}
 	}
 
@@ -84,9 +94,10 @@ public class SignalRUnityController : MonoBehaviour {
 			_subscription = _hubProxy.Subscribe("broadcastMessage");
 			_taskSubscription = _hubProxy.Subscribe("getTask");
 			_loginSubscription = _hubProxy.Subscribe("login");
+			_trainingSubscription = _hubProxy.Subscribe("getTraining");
 
 			_loginSubscription.Data += OnLog;
-
+			_trainingSubscription.Data += OnTrainingRecording;
 //			_taskSubscription.Data += data =>
 //			{
 //				Debug.Log("signalR called us back");
@@ -121,6 +132,15 @@ public class SignalRUnityController : MonoBehaviour {
 		}
 	}
 
+	void OnTrainingRecording(object[] data)
+	{
+		Debug.Log("back");
+		TrainingId = Convert.ToInt32(data[0].ToString());
+		TrainingPosition = data[1].ToString();
+		CurrentTask = Convert.ToInt32(data[2].ToString());
+
+	}
+
 	void OnData(object[] data)
 	{
 		IList collection = (IList)data[0];
@@ -140,22 +160,18 @@ public class SignalRUnityController : MonoBehaviour {
 		                 message);
 	}
 
-	public void UpdatePosition(string username, int trainingID, string position, long taskID)
+	public void UpdatePosition(string position, int trainingType, long taskID)
 	{
 		if (!useSignalR)
 			return;
-		if (trainingID == 2)
-		{
-			taskID = -1;
-		}
-		_hubProxy.Invoke("updatepause", username, trainingID, position, taskID);
+		_hubProxy.Invoke("updatepause", Username, trainingType, position, taskID);
 	}
 
-	public void TaskRequest(long TrainingId)
+	public void TaskRequest()
 	{
 		if (!useSignalR)
 			return;
-		_hubProxy.Invoke("taskrequest", 9);
+		_hubProxy.Invoke("taskrequest", TrainingId);
 	}
 
 	public void Login(string username, string password)
@@ -170,6 +186,27 @@ public class SignalRUnityController : MonoBehaviour {
 		if (!useSignalR)
 			return;
 		_hubProxy.Invoke("userlogout", Username);
+	}
+
+	public void GetTraining(int trainingType)
+	{
+		if (!useSignalR)
+			return;
+		_hubProxy.Invoke("gettraining", Username, trainingType);
+	}
+
+	public void Finished()
+	{
+		if (!useSignalR)
+			return;
+		_hubProxy.Invoke("finish", TrainingId);
+	}
+
+	public void FaultRecord(long ct)
+	{
+		if (!useSignalR)
+			return;
+		_hubProxy.Invoke("fault", TrainingId, ct);
 	}
 }
 
