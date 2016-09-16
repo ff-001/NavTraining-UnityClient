@@ -87,13 +87,13 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &4298644
+--- !u!114 &4298644 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11400000, guid: 004eb8234dcbc3f4bb49009e57a6ed44,
     type: 2}
   m_PrefabInternal: {fileID: 1185850785}
   m_Script: {fileID: 11500000, guid: 57e428c9b6087304da439ec665b56a2d, type: 3}
---- !u!4 &14198921
+--- !u!4 &14198921 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 1f972f5483b779142956dc9ac68b71a7, type: 2}
   m_PrefabInternal: {fileID: 743576306}
@@ -143,7 +143,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fee46b827274e694aa251e2d36700135, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &713025041
+--- !u!4 &713025041 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: fee46b827274e694aa251e2d36700135, type: 2}
   m_PrefabInternal: {fileID: 244416311}
@@ -234,7 +234,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 11400000, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
       propertyPath: items.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
       propertyPath: m_LocalPosition.x
@@ -322,19 +322,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
       propertyPath: mSelectedItem
-      value: Outbound
+      value: RightWaitingLine
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
       propertyPath: items.Array.data[0]
-      value: Outbound
+      value: RightWaitingLine
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
       propertyPath: items.Array.data[1]
-      value: Inbound
+      value: LeftWaitingLine
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
       propertyPath: items.Array.data[2]
-      value: Outbound
+      value: Entrance575_2
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
       propertyPath: separatePanel
@@ -343,7 +343,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &839181515
+--- !u!4 &839181515 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
   m_PrefabInternal: {fileID: 839181514}
@@ -475,7 +475,7 @@ MonoBehaviour:
   DestinationPreferList: {fileID: 1357768661}
   TrainingModeList: {fileID: 4298644}
   StartButton: {fileID: 1762415686}
---- !u!114 &1062532936
+--- !u!114 &1062532936 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11400000, guid: 004eb8234dcbc3f4bb49009e57a6ed44,
     type: 2}
@@ -678,7 +678,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 11400000, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
       propertyPath: items.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
       propertyPath: m_LocalPosition.x
@@ -770,40 +770,48 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
       propertyPath: items.Array.data[0]
-      value: Entrance 9
+      value: Entrance544
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
       propertyPath: mSelectedItem
-      value: Entrance 9
+      value: Entrance544
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
       propertyPath: items.Array.data[1]
-      value: Entrance 8
+      value: Entrance562
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
       propertyPath: items.Array.data[2]
-      value: Entrance 7
+      value: Entrance575_2
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
       propertyPath: items.Array.data[3]
-      value: Entrance 6
+      value: Entrance575_1
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
       propertyPath: items.Array.data[4]
-      value: Entrance 5
+      value: Entrance582_2
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
       propertyPath: items.Array.data[5]
-      value: Entrance 4
+      value: Entrance582_1
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
       propertyPath: items.Array.data[6]
-      value: Entrance 9
+      value: LeftWaitingLine
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
+      propertyPath: items.Array.data[7]
+      value: Entrance 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
+      propertyPath: items.Array.data[8]
+      value: LeftWaitingLine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &1133520327
+--- !u!4 &1133520327 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
   m_PrefabInternal: {fileID: 1133520326}
@@ -925,11 +933,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &1185850786
+--- !u!4 &1185850786 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
   m_PrefabInternal: {fileID: 1185850785}
---- !u!114 &1357768661
+--- !u!114 &1357768661 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11400000, guid: 004eb8234dcbc3f4bb49009e57a6ed44,
     type: 2}
@@ -1211,7 +1219,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &1520748605
+--- !u!4 &1520748605 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
   m_PrefabInternal: {fileID: 1520748604}
@@ -1403,7 +1411,7 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
---- !u!114 &1762415686
+--- !u!114 &1762415686 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11400000, guid: fee46b827274e694aa251e2d36700135,
     type: 2}
@@ -1551,17 +1559,17 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &1771371267
+--- !u!4 &1771371267 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
   m_PrefabInternal: {fileID: 1771371266}
---- !u!114 &1900389505
+--- !u!114 &1900389505 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11400000, guid: 004eb8234dcbc3f4bb49009e57a6ed44,
     type: 2}
   m_PrefabInternal: {fileID: 1771371266}
   m_Script: {fileID: 11500000, guid: 57e428c9b6087304da439ec665b56a2d, type: 3}
---- !u!114 &1923473042
+--- !u!114 &1923473042 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11400000, guid: 004eb8234dcbc3f4bb49009e57a6ed44,
     type: 2}
@@ -1593,7 +1601,7 @@ Transform:
   m_GameObject: {fileID: 1965714361}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .0050125313, y: .0050125313, z: .0050125313}
+  m_LocalScale: {x: .00481927721, y: .00481927721, z: .00481927721}
   m_Children:
   - {fileID: 14198921}
   - {fileID: 1006981435}

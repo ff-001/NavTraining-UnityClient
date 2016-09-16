@@ -186,6 +186,7 @@ public class SignalRUnityController : MonoBehaviour {
 		if (!useSignalR)
 			return;
 		_hubProxy.Invoke("userlogout", Username);
+		Finished();
 	}
 
 	public void GetTraining(int trainingType)

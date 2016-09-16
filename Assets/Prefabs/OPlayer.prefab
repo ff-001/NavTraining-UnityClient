@@ -191,7 +191,7 @@ GameObject:
   - 81: {fileID: 8162206}
   m_Layer: 0
   m_Name: CenterEyeAnchor
-  m_TagString: Untagged
+  m_TagString: OculusDirection
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -8,6 +8,13 @@ public class Path{
 	Dictionary<string, string> EntranceDic = new Dictionary<string, string>();
 	
 	public Path(){
+		PathList.Add("LeftWaitingLineToEntrance575_2ByStair", new Landmark[6]{
+			FixedLandmark.LeftWaitingLine, 
+			FixedLandmark.EnterInBound, 
+			FixedLandmark.EndFareGate, 
+			FixedLandmark.LeftFareMachine, 
+			FixedLandmark.LeftMetalGate, 
+			FixedLandmark.Entrance575_2});
 		PathList.Add("Entrance544ToRightWaitingLineByStair", new Landmark[7]{
 			FixedLandmark.Entrance544, 
 			FixedLandmark.Hallway, 
@@ -193,12 +200,12 @@ public class Path{
 			FixedLandmark.EnterInBound, 
 			FixedLandmark.LeftWaitingLine});
 		
-		EntranceDic.Add("Entrance 9", "Entrance544");
-		EntranceDic.Add("Entrance 4", "Entrance562");
-		EntranceDic.Add("Entrance 5", "Entrance575_2");
-		EntranceDic.Add("Entrance 6", "Entrance575_1");
-		EntranceDic.Add("Entrance 7", "Entrance582_2");
-		EntranceDic.Add("Entrance 8", "Entrance582_1");
+//		EntranceDic.Add("Entrance 9", "Entrance544");
+//		EntranceDic.Add("Entrance 4", "Entrance562");
+//		EntranceDic.Add("Entrance 5", "Entrance575_2");
+//		EntranceDic.Add("Entrance 6", "Entrance575_1");
+//		EntranceDic.Add("Entrance 7", "Entrance582_2");
+//		EntranceDic.Add("Entrance 8", "Entrance582_1");
 	}
 	
 	public Landmark[] getPathbyName(string name){
@@ -208,7 +215,9 @@ public class Path{
 	}
 	public string GetEntranceString(string entrance){
 		string es = null;
-		EntranceDic.TryGetValue(entrance, out es);
+//		EntranceDic.TryGetValue(entrance, out es);
+		es = entrance;
+		Debug.Log(es);
 		return es;
 	}
 }

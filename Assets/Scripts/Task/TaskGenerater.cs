@@ -11,7 +11,7 @@ public class TaskGenerater : MonoBehaviour {
 
 	private string entrance;
 	private string transmitMode;
-	private string out_in;
+	private string destination;
 
 	private Path pathClass;
 
@@ -20,22 +20,18 @@ public class TaskGenerater : MonoBehaviour {
 		pathClass = new Path();
 	}
 
-	public Landmark[] SetNewTask(string e, string  t, string  oi){
+	public Landmark[] SetNewTask(string e, string  t, string  d){
 		Landmark[] taskLandmarks = null;
 		this.entrance = pathClass.GetEntranceString(e);
 		this.transmitMode = t;
-		this.out_in = oi;
+		this.destination = d;
 		taskLandmarks = NewPath();
 		return taskLandmarks;
 	}
 	
 	private Landmark[] NewPath() {
-		if(out_in == Out_In.Out){
-			taskPathString= entrance+"To"+"RightWaitingLine"+"By"+transmitMode;
-		}else{
-			taskPathString= entrance+"To"+"LeftWaitingLine"+"By"+transmitMode;
-		}
-		Debug.Log("Current Task: Entrance545ToRightWaitingLineByStair");
+		taskPathString= entrance+"To"+destination+"By"+transmitMode;
+		Debug.Log("Current Task: " + taskPathString);
 		return pathClass.getPathbyName(taskPathString);
 	}
 	
