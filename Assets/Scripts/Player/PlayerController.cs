@@ -340,10 +340,11 @@ public class PlayerController : MonoBehaviour
 		if (HaltUpdateMovement)
 			return;
 
-		bool moveForward = Input.GetKey(KeyCode.W);
+		//bool moveForward = Input.GetKey(KeyCode.W);
+		bool moveForward = Input.GetAxis("Vertical") > 0 ? true : false;
 		bool moveLeft = Input.GetKey(KeyCode.A);
 		bool moveRight = Input.GetKey(KeyCode.D);
-		bool moveBack = Input.GetKey(KeyCode.S);
+		bool moveBack = Input.GetAxis("Vertical") < 0 ? true : false;
 		
 		bool dpad_move = false;
 		
@@ -402,11 +403,11 @@ public class PlayerController : MonoBehaviour
 		prevHatRight = curHatRight;
 		
 //		//Use keys to ratchet rotation
-//		if (Input.GetKeyDown(KeyCode.Q))
-//			euler.y -= RotationRatchet;
-//		
-//		if (Input.GetKeyDown(KeyCode.E))
-//			euler.y += RotationRatchet;
+		if (Input.GetKeyDown(KeyCode.Q))
+			euler.y -= RotationRatchet;
+		
+		if (Input.GetKeyDown(KeyCode.E))
+			euler.y += RotationRatchet;
 		
 		float rotateInfluence = SimulationRate * Time.deltaTime * RotationAmount * RotationScaleMultiplier;
 
@@ -433,10 +434,12 @@ public class PlayerController : MonoBehaviour
 		if(leftAxisX > 0.0f)
 			MoveThrottle += ort * (leftAxisX * moveInfluence * BackAndSideDampen * Vector3.right);
 		
-		float rightAxisX = OVRGamepadController.GPC_GetAxis(OVRGamepadController.Axis.RightXAxis);
-		
+		//float rightAxisX = OVRGamepadController.GPC_GetAxis(OVRGamepadController.Axis.RightXAxis);
+
+		float rightAxisX = Input.GetAxis("Horizontal");
+
 		euler.y += rightAxisX * rotateInfluence;
-		
+
 		transform.rotation = Quaternion.Euler(euler);
 	}
 
